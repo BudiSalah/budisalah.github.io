@@ -5,5 +5,5 @@ A simple CV made with HTML, CSS, Bootstrap, and Javascript.
 - Email: budi.salah@outlook.com
 - Phone: +201201678936
 
-To watch this CV live, Visit the link below:
+To watch this CV live, Visit this link:
 https://www.budisalah.github.io
