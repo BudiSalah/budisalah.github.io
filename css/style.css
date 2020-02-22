@@ -124,7 +124,7 @@ li.bu_lang-score-max ~ * {
 
 .chart-container {
     position: relative;
-    margin-right: auto;
+    margin: auto;
     height: 35vw;
     width: 35vw;
 }

@@ -8,10 +8,11 @@ function chart() {
     var ctx = document.getElementById('myChart').getContext('2d'),
         data = {
             datasets: [{
-                data: [10, 20, 30, 40],
+                data: [90, 70, 35, 85, 65],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(255, 159, 64)',
+                    'rgb(255, 64, 159)',
                     'rgb(255, 205, 86)',
                     'rgb(86, 205, 255)'
                 ]
@@ -19,10 +20,11 @@ function chart() {
         
             // These labels appear in the legend and in the tooltips when hovering different arcs
             labels: [
-                'C',
-                'Python',
-                'HTML, CSS',
-                'Javascript'
+                "HTML, CSS, Sass, Bootstrap, Git",
+                "Angular, Ionic, SQL",
+                "C, Python, Linux, Php",
+                "Javascript, Jquery, React JS",
+                "Adobe CC"
             ]
         };
 
