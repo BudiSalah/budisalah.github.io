@@ -6,4 +6,4 @@ A simple CV made with HTML, CSS, Bootstrap, and Javascript.
 - Phone: +201201678936
 
 To watch this CV live, Visit this link:
-https://www.budisalah.github.io
+https://budisalah.github.io
