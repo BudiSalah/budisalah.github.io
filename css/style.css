@@ -1,0 +1,152 @@
+/* default */
+:root {
+    --main-color: #e29e1a;
+    --normal-text-color: #384347;
+}
+
+body {
+    background-image: url("../images/page_background.png");
+    background-position: 100% 0;
+    padding: 32px 0 64px;
+}
+
+card,
+component,
+icon,
+lang-wrapper {
+    display: block;
+}
+
+.main-text-color {
+    color: var(--main-color);
+}
+
+p {
+    letter-spacing: .6px;
+    color: var(--normal-text-color);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+svg {
+    fill: var(--main-color);
+}
+
+hr {
+    border-style: dashed;
+    border-top-width: 1px;
+    border-color: #999;
+}
+
+.bu_headline-wrapper {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid #333;
+    margin-bottom: 16px;
+}
+
+.bu_grid-c-wrapper {
+    display: grid;
+    grid-template-columns: 60% 34.5%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 60px;
+}
+
+.card,
+.card * {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+ }
+
+/* -/default */
+
+.bu_personal-pic-c-wrapper {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.card-header {
+    font-size: 21px;
+}
+
+.bu_lang-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.bu_lang-level {
+    font-size: 13px;
+    color: #65696d;
+}
+
+.bu_lang-score ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.bu_lang-score ul li {
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--main-color);
+    margin: 0 2px;
+}
+
+li.bu_lang-score-max,
+li.bu_lang-score-max ~ * {
+    background: var(--normal-text-color) !important;
+}
+
+.bu_upwork-icon-wrapper {
+    width: 24px;
+    height: 24px;
+}
+
+.bu_upwork-icon-wrapper svg {
+    transform: scale(0.4) translate(-50px, -44px);
+}
+
+.bu_upwork-icon-wrapper svg path {
+    fill: var(--main-color);
+}
+
+.bu_skill-wrapper > * {
+    margin: 0 11px 12px 0;
+    padding: 0 8px;
+    border-bottom: 1px solid;
+}
+
+/* media */
+@media screen and (max-width: 1199px) {
+    .w-25 {
+        width: -ms-fit-content !important;
+        width: -moz-fit-content !important;
+        width: -webkit-fill-available !important;
+        width: -webkit-fit-content !important;
+        width: fit-content !important;
+        margin-right: 16px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        padding: 0 !important;
+    }
+
+    .bu_grid-c-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+/* -/ media */
