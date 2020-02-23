@@ -1,6 +1,7 @@
 function main() {
     document.addEventListener("DOMContentLoaded", () => {
         chart();
+        
     }, false);
 };
 

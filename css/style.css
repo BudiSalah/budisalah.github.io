@@ -184,3 +184,35 @@ li.bu_lang-score-max ~ * {
     }
 }
 /* -/ media */
+
+/* CUSTOME STYLE FOR PRINT */
+@media print {
+    .mt-5 {
+        margin-top: 16px !important;
+    }
+
+    .my-5 {
+        margin-top: 0px !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 32px !important;
+    }
+
+    .bu_date-meta-wrapper,
+    .bu_card-date-wrapper {
+        width: 180px !important;
+    }
+
+    .bu_main-skills-c-wrapper {
+        display: none !important;
+    }
+
+    .bu_my-work-c-wrapper {
+        padding-top: 64px !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+}
