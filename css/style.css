@@ -60,6 +60,10 @@ hr {
     padding: 0;
  }
 
+ a.custom-link:hover {
+    color: #0056b3 !important;
+ }
+
 /* -/default */
 
 .bu_personal-pic-c-wrapper {
@@ -71,6 +75,14 @@ hr {
 
 .card-header {
     font-size: 21px;
+}
+
+.list-inline {
+    list-style: disc;
+}
+
+.list-inline > li {
+    margin-bottom: 12px;
 }
 
 .bu_lang-name {
