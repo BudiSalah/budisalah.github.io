@@ -9,19 +9,19 @@ function chart() {
     var ctx = document.getElementById('myChart').getContext('2d'),
         data = {
             datasets: [{
-                data: [80, 15, 5],
+                data: [55, 40, 25],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
-                    'rgb(255, 205, 86)',
-                    'rgb(86, 205, 255)'
+                    'rgb(86, 205, 255)',
+                    'rgb(255, 205, 86)'
                 ]
             }],
         
             // These labels appear in the legend and in the tooltips when hovering different arcs
             labels: [
-                "Web Development",
-                "Database",
-                "Graphic Design"
+                "Front-End",
+                "Web Design",
+                "Back-End"
             ]
         };
 

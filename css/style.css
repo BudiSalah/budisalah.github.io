@@ -79,6 +79,7 @@ hr {
 
 .list-inline {
     list-style: disc;
+    padding-left: 19px;
 }
 
 .list-inline > li {
@@ -199,16 +200,25 @@ li.bu_lang-score-max ~ * {
 
 /* CUSTOME STYLE FOR PRINT */
 @media print {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        margin: 0 !important;
+    }
+
     .mt-5 {
-        margin-top: 16px !important;
+        margin-top: 0px !important;
     }
 
     .my-5 {
         margin-top: 0px !important;
+        margin-bottom: 0px !important;
     }
 
     .mb-5 {
-        margin-bottom: 32px !important;
+        margin-bottom: 18px !important;
     }
 
     .bu_date-meta-wrapper,
@@ -226,5 +236,9 @@ li.bu_lang-score-max ~ * {
 
     a {
         text-decoration: none !important;
+    }
+
+    .bu_card-flex-wrapper img {
+        max-height: 115px;
     }
 }
