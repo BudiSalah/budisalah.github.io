@@ -9,7 +9,7 @@ function chart() {
     var ctx = document.getElementById('myChart').getContext('2d'),
         data = {
             datasets: [{
-                data: [55, 40, 25],
+                data: [70, 5, 25],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(86, 205, 255)',
