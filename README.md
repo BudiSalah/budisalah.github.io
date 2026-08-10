@@ -4,10 +4,11 @@ Personal portfolio — Nuxt 4 source, built down to a **single self-contained
 `index.html`** for GitHub Pages.
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
-npm run generate   # → dist/index.html (one file) + public assets
-npm run preview    # serve dist/
+make install
+make dev       # http://localhost:3000
+make build     # → dist/index.html (one file) + public assets
+make preview   # serve dist/ on :4173
+make           # list targets
 ```
 
 ## How it stays one file
