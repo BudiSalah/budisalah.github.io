@@ -213,13 +213,39 @@ export const experience: Job[] = [
   },
   {
     period: '07/2018 — 11/2020',
-    location: 'Alexandria, Egypt',
+    location: 'Alexandria, Egypt · On-site',
     title: 'Front-End Developer',
     company: 'Scripty Team',
-    accent: 'purple',
+    accent: 'pink',
     bullets: [
       'Developed custom WordPress themes with HTML, CSS and Bootstrap — over $20,000 in revenue.',
-      'Designed dynamic React and Angular applications, +30% user retention.',
+      'Designed dynamic React and Angular applications, sharpening both the experience and how much of it people actually used.',
+      'Lifted user retention 30% in twelve months, mostly by making the interface explain itself.',
+    ],
+  },
+  {
+    period: '07/2016 — 06/2018',
+    location: 'Remote',
+    title: 'Front-End Developer, Freelance',
+    company: 'Upwork',
+    accent: 'purple',
+    bullets: [
+      'Redesigned client applications mobile-first — responsiveness stopped being an afterthought and satisfaction followed.',
+      'Built responsive pages from PSD designs with Bootstrap, tightening the hand-off between design and delivery.',
+      'Worked directly with cross-functional teams across two years of contracts, which is where shipping on someone else’s deadline became normal.',
+    ],
+  },
+  {
+    period: '02/2016 — 06/2016',
+    location: 'Alexandria, Egypt · On-site',
+    title: 'Intern, then Junior Front-End Developer',
+    company: 'i2i Vision → Excerpt For Web Development',
+    accent: 'coral',
+    bullets: [
+      'Where it started: converting PSD and Sketch files into static pages by hand, in plain HTML and CSS, then making them responsive with Bootstrap.',
+      'Paired with senior developers to extend web applications in JavaScript and jQuery.',
+      'Debugged proactively and sat in on code reviews — error rates down 5% in two months.',
+      'Turned static pages into custom WordPress themes, in a startup where the next task was always slightly beyond what I knew.',
     ],
   },
 ]
