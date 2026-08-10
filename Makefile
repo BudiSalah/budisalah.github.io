@@ -17,5 +17,5 @@ build: ## Build the single-file site into dist/
 preview: ## Serve dist/ on :4173
 	npx -y serve dist -l 4173
 
-clean: ## Remove build output
-	rm -rf dist .output .nuxt
+clean: ## Remove build output and caches
+	rm -rf dist .output .nuxt node_modules/.cache node_modules/.vite

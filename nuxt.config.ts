@@ -9,6 +9,8 @@ export default defineNuxtConfig({
   ssr: true,
   features: {
     inlineStyles: true,
+    // No Vue runtime, no hydration. The page's only script is inlined by
+    // server/plugins/inline-motion.ts.
     noScripts: 'all',
   },
 

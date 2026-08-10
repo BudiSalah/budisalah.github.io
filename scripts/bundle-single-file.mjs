@@ -2,7 +2,8 @@
  * Turns the prerendered Nuxt output into ONE self-contained index.html in dist/.
  *
  *  - inlines every stylesheet Nuxt emitted
- *  - inlines app/assets/js/motion.js as the page's only script
+ *  - verifies app/assets/js/motion.js came through inline (nuxt.config injects
+ *    it, so `nuxt dev` and the built file behave identically)
  *  - drops preload/prefetch/modulepreload hints (nothing left to preload)
  *  - copies public/ assets (the CV PDF) alongside it
  *
@@ -38,12 +39,19 @@ for (const [tag] of cssHrefs) {
 /* ---------- 2. strip resource hints ---------- */
 html = html.replace(/<link[^>]*rel="(?:modulepreload|preload|prefetch)"[^>]*>/g, '')
 
-/* ---------- 3. inline the behaviour script ---------- */
+/* ---------- 3. guards ---------- */
+// motion.js is inlined by nuxt.config (so dev matches prod) — check it landed.
 const motion = await readFile(motionPath, 'utf8')
-if (motion.includes('</script')) throw new Error('motion.js contains a script terminator')
-html = html.replace('</body>', `<script>\n${motion}\n</script>\n</body>`)
+const marker = motion.split('\n').find((l) => l.includes('var CONFIG'))?.trim()
+if (!marker || !html.includes(marker)) {
+  throw new Error('index.html is missing the inlined motion script')
+}
 
-/* ---------- 4. guard: no local asset references left ---------- */
+// No external <script src> and nothing left pointing at build assets.
+const externalScripts = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map((m) => m[1])
+if (externalScripts.length) {
+  throw new Error(`index.html loads external scripts:\n  ${externalScripts.join('\n  ')}`)
+}
 const localRefs = [...html.matchAll(/(?:src|href)="(\/_nuxt\/[^"]+)"/g)].map((m) => m[1])
 if (localRefs.length) {
   throw new Error(`index.html still references build assets:\n  ${localRefs.join('\n  ')}`)
