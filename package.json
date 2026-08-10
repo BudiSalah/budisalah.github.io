@@ -1,0 +1,17 @@
+{
+  "name": "budisalah-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "generate": "nuxt generate && node scripts/bundle-single-file.mjs",
+    "build": "npm run generate",
+    "preview": "npx serve dist",
+    "typecheck": "nuxt typecheck"
+  },
+  "devDependencies": {
+    "nuxt": "4.5.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  }
+}

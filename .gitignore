@@ -1,0 +1,30 @@
+# dependencies
+node_modules
+
+# nuxt build artifacts
+.nuxt
+.nitro
+.cache
+.output
+dist
+
+# env
+.env
+.env.*
+!.env.example
+
+# editor / tooling
+.claude
+.cursor
+.vscode
+.idea
+
+# logs
+*.log
+logs
+npm-debug.log*
+yarn-error.log*
+
+# os
+.DS_Store
+Thumbs.db

@@ -1,0 +1,79 @@
+/* Design tokens — every colour, font and rhythm value the components use. */
+:root {
+  --c-ink: #17140f;
+  --c-cream: #fdfbf4;
+  --c-white: #ffffff;
+  --c-amber: #f5b21a;
+  --c-coral: #f26b3a;
+  --c-blue: #2f6bdc;
+  --c-green: #17a67a;
+  --c-purple: #7b4ddc;
+  --c-pink: #e8517f;
+
+  --c-body: #4a443a;
+  --c-muted: #8a8172;
+  --c-muted-dark: #9c9484;
+  --c-body-dark: #c9c2b4;
+  --c-line: #ede6d6;
+  --c-line-dashed: #dcd4c2;
+  --c-track-dark: #3a342a;
+
+  --tint-amber: #fdf0ce;
+  --tint-coral: #fde0d4;
+  --tint-blue: #d9e5fa;
+  --tint-green: #d2f0e5;
+  --tint-purple: #e4daf9;
+
+  --f-display: 'Baloo 2', cursive;
+  --f-body: 'Nunito', system-ui, sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --shell: 1180px;
+  --gutter: 24px;
+  --border: 3px;
+  --r-card: 26px;
+  --r-panel: 28px;
+  --r-pill: 999px;
+}
+
+/* Accent utility: any element can opt into a palette colour. */
+[data-accent='amber'] {
+  --accent: var(--c-amber);
+  --accent-tint: var(--tint-amber);
+  --accent-on: var(--c-ink);
+}
+[data-accent='coral'] {
+  --accent: var(--c-coral);
+  --accent-tint: var(--tint-coral);
+  --accent-on: var(--c-cream);
+}
+[data-accent='blue'] {
+  --accent: var(--c-blue);
+  --accent-tint: var(--tint-blue);
+  --accent-on: var(--c-cream);
+}
+[data-accent='green'] {
+  --accent: var(--c-green);
+  --accent-tint: var(--tint-green);
+  --accent-on: var(--c-cream);
+}
+[data-accent='purple'] {
+  --accent: var(--c-purple);
+  --accent-tint: var(--tint-purple);
+  --accent-on: var(--c-cream);
+}
+[data-accent='pink'] {
+  --accent: var(--c-pink);
+  --accent-tint: var(--tint-coral);
+  --accent-on: var(--c-cream);
+}
+[data-accent='cream'] {
+  --accent: var(--c-cream);
+  --accent-tint: var(--c-cream);
+  --accent-on: var(--c-ink);
+}
+[data-accent='ink'] {
+  --accent: var(--c-ink);
+  --accent-tint: var(--c-ink);
+  --accent-on: var(--c-cream);
+}
