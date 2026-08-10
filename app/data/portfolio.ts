@@ -303,30 +303,39 @@ export const projects: Project[] = [
   },
 ]
 
+// Order is deliberate: the seven I want read first, then messaging and data,
+// then infra, then the front-end years. No two neighbours share an accent.
 export const skills: Skill[] = [
+  // — the headline seven —
   { label: 'Golang', accent: 'amber' },
-  { label: 'NestJS', accent: 'cream' },
-  { label: 'TypeScript', accent: 'coral' },
-  { label: 'Laravel', accent: 'blue' },
-  { label: 'Microservices', accent: 'green' },
-  { label: 'Event Sourcing', accent: 'cream' },
-  { label: 'gRPC', accent: 'purple' },
-  { label: 'CQRS', accent: 'amber' },
-  { label: 'SQL Server', accent: 'cream' },
-  { label: 'MySQL', accent: 'coral' },
+  { label: 'Microservices', accent: 'cream' },
+  { label: 'gRPC', accent: 'coral' },
+  { label: 'CQRS', accent: 'blue' },
+  { label: 'Event Sourcing', accent: 'green' },
+  { label: 'CI/CD', accent: 'cream' },
+  { label: 'GitHub Actions', accent: 'purple' },
+
+  // — messaging & data —
+  { label: 'Kafka', accent: 'coral' },
+  { label: 'Pulsar', accent: 'amber' },
   { label: 'MongoDB', accent: 'green' },
   { label: 'Redis', accent: 'blue' },
-  { label: 'OpenTelemetry', accent: 'cream' },
-  { label: 'Grafana', accent: 'amber' },
-  { label: 'Pulsar', accent: 'purple' },
-  { label: 'Kafka', accent: 'coral' },
-  { label: 'CI/CD', accent: 'cream' },
-  { label: 'GitHub Actions', accent: 'green' },
-  { label: 'Jenkins', accent: 'blue' },
-  { label: 'Vue.js', accent: 'amber' },
-  { label: 'Nuxt', accent: 'cream' },
+  { label: 'SQL Server', accent: 'cream' },
+  { label: 'MySQL', accent: 'coral' },
+
+  // — observability & infra —
+  { label: 'OpenTelemetry', accent: 'amber' },
+  { label: 'Grafana', accent: 'cream' },
   { label: 'Docker', accent: 'purple' },
   { label: 'Kubernetes', accent: 'coral' },
+  { label: 'Jenkins', accent: 'blue' },
+
+  // — the front-end years —
+  { label: 'NestJS', accent: 'green' },
+  { label: 'TypeScript', accent: 'amber' },
+  { label: 'Vue.js', accent: 'cream' },
+  { label: 'Nuxt', accent: 'coral' },
+  { label: 'Laravel', accent: 'blue' },
   { label: 'MCP / AI tooling', accent: 'green' },
 ]
 
