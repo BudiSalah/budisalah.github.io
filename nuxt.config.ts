@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { years } from './app/data/portfolio'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
 
@@ -31,7 +33,7 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'Abdelrahman Salah (Budi) — Software Engineer, 9 years. Golang, event-driven microservices, CDC pipelines, and very few bottlenecks.',
+            `Abdelrahman Salah (Budi) — Software Engineer, ${years} years. Golang, event-driven microservices, CDC pipelines, and very few bottlenecks.`,
         },
         { name: 'theme-color', content: '#FDFBF4' },
         { property: 'og:title', content: 'Abdelrahman Salah — Software Engineer' },
@@ -39,7 +41,7 @@ export default defineNuxtConfig({
         { property: 'og:url', content: 'https://budisalah.github.io/' },
         {
           property: 'og:description',
-          content: 'Golang, events, and very few bottlenecks. 9 years of shipping.',
+          content: `Golang, events, and very few bottlenecks. ${years} years of shipping.`,
         },
       ],
       link: [

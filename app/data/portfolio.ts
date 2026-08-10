@@ -5,6 +5,17 @@
 
 export type Accent = 'amber' | 'coral' | 'blue' | 'green' | 'purple' | 'pink'
 
+/** First day on the job. Everything year-related counts from here. */
+export const CAREER_START = new Date('2016-02-01T00:00:00Z')
+
+/** Years of experience, rounded to the nearest year. Evaluated at build time. */
+export function yearsOfExperience(now: Date = new Date()): number {
+  const years = (now.getTime() - CAREER_START.getTime()) / (365.2425 * 24 * 60 * 60 * 1000)
+  return Math.max(1, Math.round(years))
+}
+
+export const years = yearsOfExperience()
+
 export interface Profile {
   name: string
   nickname: string
@@ -86,7 +97,7 @@ export const hero = {
   /** `<b>` picks up the accent colour set by its own data-accent. */
   headlineHtml:
     'Software Engineer.<br>' +
-    '<b data-accent="amber">9 years.</b><br>' +
+    `<b data-accent="amber">${years} years.</b><br>` +
     'Golang, events, and <b data-accent="blue">very few bottlenecks.</b>',
   intro:
     "I build the quiet machinery — microservices, event streams, change-data-capture — that makes other people's products feel fast. Occasionally I sneak back to the front-end for fun.",
@@ -112,7 +123,7 @@ export const stats: Stat[] = [
     text: 'less retrieval time with Redis caching and MongoDB projections off the event store.',
   },
   {
-    value: '9+',
+    value: `${years}+`,
     accent: 'green',
     text: 'years shipping, from WordPress themes in Alexandria to event-sourced systems in Cairo.',
   },
@@ -122,7 +133,7 @@ export const about = {
   eyebrow: 'Receipts, not adjectives',
   title: "Hi — I'm the person your latency graph is afraid of.",
   paragraphs: [
-    'Nine years ago I was converting PSDs into WordPress themes. Today I write Golang services that move financial data between SQL Server, Apache Pulsar, Kafka and MongoDB without anyone noticing they moved at all — which, honestly, is the whole point.',
+    `${years} years ago I was converting PSDs into WordPress themes. Today I write Golang services that move financial data between SQL Server, Apache Pulsar, Kafka and MongoDB without anyone noticing they moved at all — which, honestly, is the whole point.`,
     "The front-end years weren't wasted either. Having shipped design systems, SSR apps and admin dashboards means I know exactly who is on the other end of my API, and roughly how annoyed they'll be if it's slow.",
     'Event sourcing, CQRS, DDD, OpenTelemetry, a healthy fear of untraced systems. Docker, Kubernetes, GitHub Actions. And lately, wiring AI tooling through Model Context Protocol because the future looked like it needed a hand.',
   ],

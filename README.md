@@ -42,6 +42,10 @@ lattice; if it is blocked, the hero just renders flat).
   `app/components/`, and drop it into `app/app.vue`.
 - **New accent colour:** add the token and a `[data-accent='…']` block in
   `tokens.css`; any component picks it up via `data-accent`.
+- **Years of experience:** derived from `CAREER_START` (Feb 2016) via
+  `yearsOfExperience()`, rounded to the nearest year, and used by the hero, the stat,
+  the about copy and the meta tags. It is computed at build time; the deploy
+  workflow rebuilds monthly so it never goes stale.
 - **Motion:** tune the `CONFIG` object at the top of `motion.js`
   (`motionLevel`, `confettiCount`, `easterEggEnabled`).
 

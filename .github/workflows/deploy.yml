@@ -5,6 +5,10 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+  # The years-of-experience count is baked in at build time — rebuild monthly
+  # so it stays current without a push.
+  schedule:
+    - cron: '0 4 1 * *'
   workflow_dispatch:
 
 permissions:
