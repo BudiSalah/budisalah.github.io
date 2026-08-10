@@ -1,7 +1,9 @@
-name: Deploy portfolio to GitHub Pages
+name: Build & deploy portfolio
 
 on:
   push:
+    branches: [master]
+  pull_request:
     branches: [master]
   workflow_dispatch:
 
@@ -11,7 +13,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  # PRs queue per-branch; master keeps a single Pages deployment in flight.
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -26,12 +29,15 @@ jobs:
       - run: npm ci
       - run: npm run generate
       - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

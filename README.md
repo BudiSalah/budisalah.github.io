@@ -50,4 +50,8 @@ lattice; if it is blocked, the hero just renders flat).
 `.github/workflows/deploy.yml` builds on push to `master` and publishes `dist/`
 to Pages. Set **Settings → Pages → Source: GitHub Actions** once.
 
+`.github/dependabot.yml` opens grouped npm updates weekly and Actions updates
+monthly; the deploy workflow builds each PR, so a green check means the
+single-file build still works.
+
 Type `golang` on the page.
