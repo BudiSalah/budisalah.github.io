@@ -74,6 +74,22 @@ await writeFile(join(out, '404.html'), html)
 // GitHub Pages: don't run the output through Jekyll.
 await writeFile(join(out, '.nojekyll'), '')
 
+// One-page sitemap, stamped with the build date.
+const lastmod = new Date().toISOString().slice(0, 10)
+await writeFile(
+  join(out, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://budisalah.github.io/</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+`,
+)
+
 const { size } = await stat(join(out, 'index.html'))
 console.log(
   `single-file build ok → dist/index.html (${(size / 1024).toFixed(1)} KB, ` +

@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-.PHONY: help install dev build preview clean
+.PHONY: help install dev build preview og clean
 
 help: ## Show this help
 	@grep -E '^[a-z-]+:.*##' $(MAKEFILE_LIST) | sed 's/:.*##/\t/' | expand -t 12
@@ -16,6 +16,9 @@ build: ## Build the single-file site into dist/
 
 preview: ## Serve dist/ on :4173
 	npx -y serve dist -l 4173
+
+og: ## Re-render the social share card to public/og.png (needs Chrome)
+	node scripts/render-og.mjs
 
 clean: ## Remove build output and caches
 	rm -rf dist .output .nuxt node_modules/.cache node_modules/.vite

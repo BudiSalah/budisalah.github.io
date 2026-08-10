@@ -34,7 +34,23 @@ lattice; if it is blocked, the hero just renders flat).
 | `app/assets/css/main.css` | Component styles, responsive + print rules |
 | `app/assets/js/motion.js` | Reveals, card tilt, timeline draw, confetti, mailto form, easter egg, three.js hero |
 | `public/` | CV PDF (copied to `dist/` as-is) |
-| `scripts/bundle-single-file.mjs` | Single-file bundler + guard |
+| `server/plugins/` | Render-time inlining: the motion script and the JSON-LD block |
+| `scripts/og-card.html` | Social share card, styled from `tokens.css` |
+| `scripts/render-og.mjs` | Renders that card to `public/og.png` via headless Chrome (`make og`) |
+| `scripts/bundle-single-file.mjs` | Single-file bundler + guards + `sitemap.xml` |
+
+## SEO
+
+- Canonical URL, `robots` with `max-image-preview:large`, author, and an inline
+  SVG favicon (no extra request).
+- Full Open Graph (`og:type: profile`, image + dimensions + alt) and
+  `twitter:card: summary_large_image`.
+- JSON-LD `Person` + `WebSite` built from `app/data/portfolio.ts`, so the
+  structured data and the visible copy share one source.
+- `public/robots.txt` and a generated `dist/sitemap.xml` (stamped at build time).
+- `public/og.png` — 1200×630, rendered from `scripts/og-card.html`. Re-run
+  `make og` after touching the card or the tokens; the PNG is committed so a
+  normal build needs no browser.
 
 ## Extending
 

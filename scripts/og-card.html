@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Share card</title>
+    <!-- Same tokens the site uses, so the card can never drift from the design system. -->
+    <link rel="stylesheet" href="../app/assets/css/tokens.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        width: 1200px;
+        height: 630px;
+        background: var(--c-cream);
+        color: var(--c-ink);
+        font-family: var(--f-body);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* decoration, same vocabulary as the hero */
+      .blob { position: absolute; }
+      .ring {
+        right: -70px; top: -70px; width: 300px; height: 300px;
+        border: 8px dashed var(--c-coral); border-radius: 50%; opacity: 0.45;
+      }
+      .square {
+        right: 160px; bottom: -40px; width: 150px; height: 150px;
+        background: var(--c-amber); border-radius: 34px; transform: rotate(18deg); opacity: 0.5;
+      }
+      .dot {
+        left: 620px; top: 90px; width: 54px; height: 54px;
+        background: var(--c-purple); border-radius: 50%; opacity: 0.45;
+      }
+
+      .strip {
+        background: var(--c-green);
+        color: var(--c-cream);
+        font-family: var(--f-mono);
+        font-size: 20px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 16px 64px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .strip span { width: 16px; height: 16px; border-radius: 50%; background: var(--c-amber); }
+
+      main { flex: 1; padding: 44px 64px 0; position: relative; z-index: 2; }
+
+      .eyebrow {
+        font-family: var(--f-mono);
+        font-size: 22px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--c-coral);
+      }
+      h1 {
+        font-family: var(--f-display);
+        font-weight: 800;
+        font-size: 68px;
+        line-height: 1.02;
+        letter-spacing: -0.02em;
+        margin: 22px 0 0;
+        max-width: 26ch;
+      }
+      h1 b { font-weight: inherit; }
+      .amber { color: var(--c-amber); }
+      .blue { color: var(--c-blue); }
+
+      .pills { display: flex; gap: 14px; margin-top: 38px; }
+      .pill {
+        padding: 12px 26px;
+        border-radius: var(--r-pill);
+        background: var(--accent);
+        color: var(--accent-on);
+        font-weight: 800;
+        font-size: 24px;
+        transform: rotate(var(--tilt, 0deg));
+      }
+      .pill--outline {
+        background: transparent;
+        color: var(--c-ink);
+        border: 4px solid var(--c-ink);
+      }
+
+      footer {
+        padding: 0 64px 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-family: var(--f-mono);
+        font-size: 22px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--c-muted);
+        z-index: 2;
+      }
+      .rule { height: 8px; background: var(--c-amber); border-radius: 8px; width: 180px; margin-top: 18px; }
+    </style>
+  </head>
+  <body>
+    <div class="strip"><span></span>Open to senior backend &amp; platform roles</div>
+
+    <div class="blob ring"></div>
+    <div class="blob square"></div>
+    <div class="blob dot"></div>
+
+    <main>
+      <p class="eyebrow">Abdelrahman Salah — Budi</p>
+      <div class="rule"></div>
+      <h1>
+        Software&nbsp;Engineer.<br />
+        <b class="amber">Golang, events,</b><br />
+        and <b class="blue">very few bottlenecks.</b>
+      </h1>
+
+      <div class="pills">
+        <span class="pill" data-accent="amber" style="--tilt: -2deg">Event Sourcing</span>
+        <span class="pill" data-accent="blue" style="--tilt: 1.5deg">gRPC</span>
+        <span class="pill" data-accent="green" style="--tilt: -1deg">Kafka</span>
+        <span class="pill pill--outline" style="--tilt: 2deg">Kubernetes</span>
+      </div>
+    </main>
+
+    <footer>
+      <span>budisalah.github.io</span>
+      <span>Cairo, Egypt — remote friendly</span>
+    </footer>
+  </body>
+</html>
