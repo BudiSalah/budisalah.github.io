@@ -10,8 +10,8 @@
     "typecheck": "nuxt typecheck"
   },
   "devDependencies": {
-    "nuxt": "4.6.2",
-    "vue": "^3.5.42",
+    "nuxt": "4.6.4",
+    "vue": "^3.5.45",
     "vue-router": "^5.3.1"
   }
 }
